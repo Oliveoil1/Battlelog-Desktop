@@ -26,24 +26,7 @@ namespace Battlelog_Desktop
 
 		private void GameButton_Click(object sender, RoutedEventArgs e)
 		{
-			string gameId = "bf4";
-			
-			if (sender == BF3Button)
-			{
-				gameId = "bf3";
-			}
-			else if (sender == BF4Button)
-			{
-				gameId = "bf4";
-			}
-			else if (sender == BFHButton)
-			{
-				gameId = "bfh";
-			}
-			else if (sender == MOHWButton)
-			{
-				gameId = "mohw";
-			}
+			string gameId = (sender as Button).Tag.ToString();
 
 			StartGame(gameId);
 		}
@@ -62,17 +45,38 @@ namespace Battlelog_Desktop
 		{
 			if(App.Args.Length == 2 && App.Args[0] == "-game")
 			{
-				if(App.Args[1] == "bf3" || App.Args[1] == "bf4" || App.Args[1] == "bfh" || App.Args[1] == "mohw")
-				{
-					StartGame(App.Args[1]);
-				}
+				StartGame(App.Args[1]);
 			}
 		}
 
 		private void StartGame(string gameId)
 		{
 			var window = new BrowserWindow();
+
+			switch(gameId)
+			{
+				case "bf3":
+					window.BF3SwitchMenu.IsChecked = true;
+					window.Title = "Battlelog - Battlefield 3";
+					break;
+				case "bf4":
+					window.BF4SwitchMenu.IsChecked = true;
+					window.Title = "Battlelog - Battlefield 4";
+					break;
+				case "bfh":
+					window.BFHSwitchMenu.IsChecked = true;
+					window.Title = "Battlelog - Battlefield Hardline";
+					break;
+				case "mohw":
+					window.MOHWSwitchMenu.IsChecked = true;
+					window.Title = "Battlelog - Medal of Honor Warfighter";
+					break;
+				default:
+					MessageBox.Show("Invalid game id");
+					break;
+			}
 			window.gameId = gameId;
+
 			window.Show();
 			Close();
 		}

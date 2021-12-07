@@ -6,12 +6,32 @@
         xmlns:local="clr-namespace:Battlelog_Desktop"
         xmlns:Wpf="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf" x:Class="Battlelog_Desktop.BrowserWindow"
         mc:Ignorable="d"
-        Title="Battlelog / Logging in..." Height="720" Width="1280" WindowStartupLocation="CenterScreen" WindowState="Maximized" Loaded="Window_Loaded" Icon="/Images/favicon.ico">
+        Title="Battlelog - GameName" Height="720" Width="1280" WindowStartupLocation="CenterScreen" WindowState="Maximized" Loaded="Window_Loaded" Icon="/Images/favicon.ico" Closing="Window_Closing">
 	<Grid>
 		<Grid.Background>
 			<ImageBrush x:Name="BackgroundImage"/>
 		</Grid.Background>
 
-		<Wpf:WebView2 x:Name="BrowserView" Loaded="BrowserView_Loaded" NavigationCompleted="BrowserView_NavigationCompleted"/>
+
+		<DockPanel>
+			<Menu x:Name="ToolbarMenu" DockPanel.Dock="Top" Visibility="Visible" Background="#FF080E11" BorderBrush="#FF353A3F" BorderThickness="1,1,1,1">
+				<MenuItem Header="Game" Foreground="#FFD5DDE5" Background="#FF080E11">
+					<MenuItem x:Name="BF3SwitchMenu" Header="Battlefield 3" Click="GameSwitchMenu_Click" Tag="bf3" IsCheckable="True" Background="#FF080E11"/>
+					<MenuItem x:Name="BF4SwitchMenu" Header="Battlefield 4" Click="GameSwitchMenu_Click" Tag="bf4" IsCheckable="True" Background="#FF080E11"/>
+					<MenuItem x:Name="BFHSwitchMenu" Header="Battlefield Hardline" Click="GameSwitchMenu_Click" Tag="bfh" IsCheckable="True" Background="#FF080E11"/>
+					<MenuItem x:Name="MOHWSwitchMenu" Header="Medal of Honor: Warfighter" Click="GameSwitchMenu_Click" Tag="mohw" IsCheckable="True" Background="#FF080E11"/>
+				</MenuItem>
+				<MenuItem Header="Battlelog" Foreground="#FFD5DDE5" Background="#FF080E11">
+					<MenuItem x:Name="HomeMenu" Header="Home" Click="ServerBrowserMenu_Click" Background="#FF080E11"/>
+					<MenuItem x:Name="ServerBrowserMenu" Header="Server Browser" Click="ServerBrowserMenu_Click" Background="#FF080E11"/>
+					<MenuItem x:Name="CampaignMenu" Header="Campaign" Click="ServerBrowserMenu_Click" Background="#FF080E11"/>
+				</MenuItem>
+			</Menu>
+			<Menu x:Name="NavigationMenu" DockPanel.Dock="Top" Visibility="Visible" BorderBrush="#FF353A3F" Background="#FF080E11" BorderThickness="1,0,1,1">
+				<MenuItem x:Name="BackButton" Header="🡠" Click="NavigationButton_Click" Foreground="#FFD5DDE5"/>
+				<MenuItem x:Name="ForwardButton" Header="🡢" Click="NavigationButton_Click" Foreground="#FFD5DDE5"/>
+			</Menu>
+			<Wpf:WebView2 x:Name="BrowserView" Loaded="BrowserView_Loaded" NavigationCompleted="BrowserView_NavigationCompleted" NavigationStarting="BrowserView_NavigationStarting"/>
+		</DockPanel>
 	</Grid>
 </Window>

@@ -19,16 +19,16 @@
 					<Setter Property="Margin" Value="10,0,0,0"/>
 				</Style>
 			</StackPanel.Resources>
-			<Button x:Name="BF3Button" Click="GameButton_Click">
+			<Button x:Name="BF3Button" Click="GameButton_Click" Tag="bf3">
 				<Image Source="/Images/Cover Art/bf_3.jpg" Width="150"/>
 			</Button>
-			<Button x:Name="BF4Button" Click="GameButton_Click">
+			<Button x:Name="BF4Button" Click="GameButton_Click" Tag="bf4">
 				<Image Source="/Images/Cover Art/bf_4.jpg" Width="150"/>
 			</Button>
-			<Button x:Name="BFHButton" Click="GameButton_Click">
+			<Button x:Name="BFHButton" Click="GameButton_Click" Tag="bfh">
 				<Image Source="/Images/Cover Art/bf_hardline.jpg" Width="150"/>
 			</Button>
-			<Button x:Name="MOHWButton" Click="GameButton_Click">
+			<Button x:Name="MOHWButton" Click="GameButton_Click" Tag="mohw">
 				<Image Source="/Images/Cover Art/MOHW.jpg" Width="150"/>
 			</Button>
 		</StackPanel>

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battlelog Desktop", "Battlelog Desktop\Battlelog Desktop.csproj", "{14C548E9-DFF6-47A1-83FC-641406009E5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Battlelog Desktop", "Battlelog Desktop\Battlelog Desktop.csproj", "{14C548E9-DFF6-47A1-83FC-641406009E5E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
