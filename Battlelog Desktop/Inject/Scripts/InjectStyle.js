@@ -14,6 +14,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
             position: relative;
             background: rgba(8, 13, 16, 0.98);
             visibility: hidden;
+            pointer-events: auto;
+        }
+
+        #base-header {
+            pointer-events: none;
         }
 
         .pull-right {
@@ -24,6 +29,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
         #base-header .game-bar {
             position: relative;
             top: -50px;
+            pointer-events: auto;
+        }
+
+        #base-header .sticky-bar {
+            pointer-events: auto;
         }
 
         #base-header-secondary-nav {

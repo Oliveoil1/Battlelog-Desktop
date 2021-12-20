@@ -89,11 +89,6 @@ namespace Battlelog_Desktop
 			client = new DiscordRpcClient(appId);
 
 			client.Initialize();
-
-			client.SetPresence(new RichPresence()
-			{
-				Details = "In menus",
-			});
 		}
 
 		private void BrowserView_NavigationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs e)
