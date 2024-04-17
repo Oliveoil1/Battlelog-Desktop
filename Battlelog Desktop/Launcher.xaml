@@ -19,17 +19,17 @@
 					<Setter Property="Margin" Value="10,0,0,0"/>
 				</Style>
 			</StackPanel.Resources>
-			<Button x:Name="BF3Button" Click="GameButton_Click" Tag="bf3">
-				<Image Source="/Images/Cover Art/bf_3.jpg" Width="150"/>
+			<Button x:Name="BF3Button" Click="GameButton_Click" ToolTip="Battlefield 3" Tag="bf3" >
+				<Image Source="/Images/Covers/bf_3.jpg" Width="150" Height="225"/>
 			</Button>
-			<Button x:Name="BF4Button" Click="GameButton_Click" Tag="bf4">
-				<Image Source="/Images/Cover Art/bf_4.jpg" Width="150"/>
+			<Button x:Name="BF4Button" Click="GameButton_Click" ToolTip="Battlefield 4" Tag="bf4">
+				<Image Source="/Images/Covers/bf_4.jpg" Width="150" Height="225"/>
 			</Button>
-			<Button x:Name="BFHButton" Click="GameButton_Click" Tag="bfh">
-				<Image Source="/Images/Cover Art/bf_hardline.jpg" Width="150"/>
+			<Button x:Name="BFHButton" Click="GameButton_Click" ToolTip="Battlefield Hardline" Tag="bfh">
+				<Image Source="/Images/Covers/bf_hardline.jpg" Width="150" Height="225"/>
 			</Button>
-			<Button x:Name="MOHWButton" Click="GameButton_Click" Tag="mohw">
-				<Image Source="/Images/Cover Art/MOHW.jpg" Width="150"/>
+			<Button x:Name="MOHWButton" Click="GameButton_Click" ToolTip="Medal of Honor Warfighter" Tag="mohw">
+				<Image Source="/Images/Covers/MOHW.jpg" Width="150" Height="225"/>
 			</Button>
 		</StackPanel>
 		<Button x:Name="CloseWindowButton" Content="r" VerticalAlignment="Top" HorizontalAlignment="Right" Width="20" Height="20" Click="CloseWindowButton_Click" Margin="0,10,10,0" Foreground="#FF9B9B9B" BorderBrush="#FF9B9B9B" Background="{x:Null}" FontFamily="Webdings"/>

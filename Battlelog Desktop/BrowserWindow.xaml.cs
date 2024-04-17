@@ -36,8 +36,19 @@ namespace Battlelog_Desktop
 		private async void InitializeBrowser()
 		{
 			var userDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Battlelog Desktop";
-			var env = await CoreWebView2Environment.CreateAsync(null, userDataFolder);
+
+			var options = new CoreWebView2EnvironmentOptions();
+			options.AreBrowserExtensionsEnabled = true;
+
+			var env = await CoreWebView2Environment.CreateAsync(null, userDataFolder, options);
 			await BrowserView.EnsureCoreWebView2Async(env);
+
+			try
+			{
+				string bblogPath = userDataFolder + "\\bblog";
+				await BrowserView.CoreWebView2.Profile.AddBrowserExtensionAsync(bblogPath);
+			}
+			catch{ }
 		}
 
 		private void BrowserView_Loaded(object sender, RoutedEventArgs e)
